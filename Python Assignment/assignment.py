@@ -1,4 +1,6 @@
 import math
+
+#1.Given two numbers a, b where b > a, find the sum of all primes between them. 
 class Solution:
     def sumPrimeNumbers(self,a:int,b:int):
         if(b<a):
@@ -18,6 +20,9 @@ class Solution:
                 totalSum+=num
         return totalSum
     
+#2.Given an array of integers, find the sub-array (continuous slice of the array) for which the 
+# absolute value of the “sum of all integers in the subarray” is minimum. 
+class Solution2:
     def smallestSum(self,nums:list[int]):
         #Assuming the size of subarray 3
         totalSum = 0
@@ -33,6 +38,8 @@ class Solution:
         return maximum
             
     
+#3.Find the 3rd smallest number in an array.     
+class Solution3:
     def thirdSmallestNumber(self,nums:list[int]):
         # If sorting was allowed we could sort the elements and return nums[2]
         
@@ -56,9 +63,11 @@ class Solution:
         return t_small if t_small!=float('inf') else None 
 
 solution = Solution()
+solution2 = Solution2()
+solution3 = Solution3()
 nums=[50,42,15,3,1,25,78,91]
 a=10
 b=20
 print(f"Sum of prime numbers between {a} and {b}: ",solution.sumPrimeNumbers(a,b))
-print("Minimum sum of all integers in the subarray is :",solution.smallestSum(nums))
-print("Third smallest number in the given array is: ", solution.thirdSmallestNumber(nums))
+print("Minimum sum of all integers in the subarray is :",solution2.smallestSum(nums))
+print("Third smallest number in the given array is: ", solution3.thirdSmallestNumber(nums))
